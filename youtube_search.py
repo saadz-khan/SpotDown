@@ -4,17 +4,20 @@
 #Import modules
 from googleapiclient.discovery import build
 from oauth2client.tools import argparser
-from sys import argv
+import sys
 
 #Set up YouTube credentials
-DEVELOPER_KEY = argv[1]
-YOUTUBE_API_SERVICE_NAME = "youtube"
-YOUTUBE_API_VERSION = "v3"
 
-youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,developerKey=DEVELOPER_KEY)
 
 #-------------Build YouTube Search------------#
-def youtubeSearch(query, max_results=1, order="relevance", token=None, location=None, location_radius=None):
+def youtubeSearch(query, dev_key, max_results=1, order="relevance", token=None, location=None, location_radius=None):
+    
+    DEVELOPER_KEY = dev_key
+    YOUTUBE_API_SERVICE_NAME = "youtube"
+    YOUTUBE_API_VERSION = "v3"
+
+    youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,developerKey=DEVELOPER_KEY)
+   
     """search upto max_results = 1 videos based on query"""
     search_response = youtube.search().list(q=query,
     type="video", 
@@ -38,7 +41,6 @@ def youtubeSearch(query, max_results=1, order="relevance", token=None, location=
     datePublished = items[0]['snippet']['publishedAt']
     print("First result is: \n Title: {0} \n Channel ID: {1} \n Published on: {2}".format(title, channelId, datePublished))
 """
-    
 
 
 #------------------------------get video Id only for download---------------------------#
@@ -130,24 +132,26 @@ def storeResults(response):
     return youtube_dict
 
 #Input query
-print("Please input your search query")
-q=input()
+#print("Please input your search query")
+#q=input()
 #Run YouTube Search
-response = youtubeSearch(q)
-results = getURL(response)
-print(results)
+#response = youtubeSearch(q, sys.argv[1])
+#results = getURL(response)
+#print(results)
 
 #----------------------Save results----------------------#
 """print("Input filename to store csv file")
-file = "\\YouTube\\" + input() + ".csv"
+file = "\\YouTube\\" + input() + ".csv"""
 
-def writeCSV(results, filename):
+def writeCSV(results):
     import csv
+    filename= input()
+    filename = input + ".csv"
     keys = sorted(results.keys())
     with open(filename, "w", newline="", encoding="utf-8") as output:
         writer = csv.writer(output, delimiter=",")
         writer.writerow(keys)
         writer.writerows(zip(*[results[key] for key in keys]))
+    print('Write successful')
 
-writeCSV(results, file)
-print("CSV file has been uploaded at: " + str(file))"""
+#writeCSV(results)
