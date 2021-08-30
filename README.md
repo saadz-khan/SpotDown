@@ -2,9 +2,9 @@
 > Automated downloading tool for Spotify playlists.  
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
-[![Selenium](https://img.shields.io/badge/Selenium-3.141.0-blue)]()
-[![Spotipy](https://img.shields.io/badge/Spotipy-2.19.0-blue)]()
-[![data-API](https://img.shields.io/badge/Google%20data--API-v3-blue)]()
+[![selenium](https://img.shields.io/badge/Selenium-3.141.0-blue)](https://www.selenium.dev/selenium/docs/api/py/api.html)
+[![spotipy](https://img.shields.io/badge/Spotipy-2.19.0-blue)](https://spotipy.readthedocs.io/en/2.19.0/)
+[![google-data-API](https://img.shields.io/badge/Google%20data--API-v3-blue)](https://developers.google.com/youtube/v3)
 [![dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen)]()
 
 Selenium based tool to download spotify playlists automatically using: 
