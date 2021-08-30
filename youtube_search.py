@@ -6,12 +6,19 @@ from googleapiclient.discovery import build
 from oauth2client.tools import argparser
 import sys
 
-#Set up YouTube credentials
 
+#Input query
+#print("Please input your search query")
+#q=input()
+#Run YouTube Search
+#response = youtubeSearch(q, sys.argv[1])
+#results = getURL(response)
+#print(results)
 
 #-------------Build YouTube Search------------#
 def youtubeSearch(query, dev_key, max_results=1, order="relevance", token=None, location=None, location_radius=None):
-    
+
+    #Set up YouTube credentials
     DEVELOPER_KEY = dev_key
     YOUTUBE_API_SERVICE_NAME = "youtube"
     YOUTUBE_API_VERSION = "v3"
@@ -131,13 +138,6 @@ def storeResults(response):
  
     return youtube_dict
 
-#Input query
-#print("Please input your search query")
-#q=input()
-#Run YouTube Search
-#response = youtubeSearch(q, sys.argv[1])
-#results = getURL(response)
-#print(results)
 
 #----------------------Save results----------------------#
 """print("Input filename to store csv file")
@@ -153,5 +153,3 @@ def writeCSV(results):
         writer.writerow(keys)
         writer.writerows(zip(*[results[key] for key in keys]))
     print('Write successful')
-
-#writeCSV(results)
