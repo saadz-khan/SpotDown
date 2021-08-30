@@ -28,7 +28,8 @@ Clone this repository `git clone https://github.com/saadz-khan/spotify-playlist-
 
 
 ![Alt Text](https://media.giphy.com/media/bMTzxmMmF6dyG2CSTL/source.gif?cid=790b7611dbd64a5860c863f445f0e33b05d6a4aaa530cad9&rid=source.gif)
-
+  
+  
 ## 3. Create Virtual Environment
 - Change your current working directory by `cd spotify-playlist-downloader`
 - Create virutal environment using `python -m venv env`
@@ -43,6 +44,7 @@ To activate the virtual  environment run:
 Install the dependencies using `pip install -r requirements.txt`  
 
 ## 6. Prerequisite
+**This part is a one time setup. Note down your API-keys and keep them to yourself** 
 - Sign in to the spotify developers dashboard [here](https://developer.spotify.com/dashboard/login) and create, name a project to get the `client_id` and `client_secret`.
 - Sign in to the google-api developers console [here](https://console.cloud.google.com/apis).
 - Go to the `Library` and search `Youtube Data API v3` and click `Enable this API`.
