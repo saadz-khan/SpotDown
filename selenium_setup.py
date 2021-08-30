@@ -39,7 +39,7 @@ def selenium_setup():
 	
 	driver = webdriver.Chrome(executable_path='./chromedriver.exe' ,options=options)
 
-	"""For Firefox webdriver use this snippet
+	"""For Firefox webdriver use this snippet "uncomment it out"
 	Firefox profile for the neccessary for download the files
 
 	profile = webdriver.FirefoxProfile()
