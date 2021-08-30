@@ -5,6 +5,8 @@ from selenium.webdriver.common.by import By
 from os import getcwd
 from time import sleep
 
+# Sample Script	
+#download_song('https://youtu.be/-Z0Im1SaWik')
 
 def download_multiple_song(links):
 	"""
@@ -18,9 +20,9 @@ def download_multiple_song(links):
 
 	browser=selenium_setup()
 	browser.get("https://ytmp3.cc/en14/")
-	for item in links:
+	for link in links:
 		try:
-			browser.find_element_by_xpath("/html/body/div[2]/div[1]/div[1]/form/input[1]").send_keys(item)
+			browser.find_element_by_xpath("/html/body/div[2]/div[1]/div[1]/form/input[1]").send_keys(link)
 			submit = browser.find_element_by_xpath("/html/body/div[2]/div[1]/div[1]/form/input[2]")
 			submit.click()
 			
@@ -32,9 +34,9 @@ def download_multiple_song(links):
 			# Convert Next Button
 			conv_next= browser.find_element_by_xpath('/html/body/div[2]/div[1]/div[1]/div[3]/a[3]')
 			conv_next.click()
-			print('Started download for ', item)
+			print('Started download for ', link)
 		except:
-			print("Download Failed. Trying next song-link please wait until complete")
+			print(f"Download Failed for {link} Trying next song-link please wait until complete")
 
 	# waits for all the files to be completed and returns the paths
 	paths = WebDriverWait(browser, 120, 1).until(download_complete_check)
@@ -51,22 +53,22 @@ def download_song(link):
 	Downloads a song in the current working directory	
 	
 	"""
-	#try:
-	browser=selenium_setup()
-	browser.get("https://ytmp3.cc/en14/")
+	try:
+		browser=selenium_setup()
+		browser.get("https://ytmp3.cc/en14/")
 
-	browser.find_element_by_xpath("/html/body/div[2]/div[1]/div[1]/form/input[1]").send_keys(link)
-	submit = browser.find_element_by_xpath("/html/body/div[2]/div[1]/div[1]/form/input[2]")
-	submit.click()
-	element = WebDriverWait(browser, 50).until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[2]/div[1]/div[1]/div[3]/a[1]")))
-	download = browser.find_element_by_xpath('/html/body/div[2]/div[1]/div[1]/div[3]/a[1]')
-	download.click()
+		browser.find_element_by_xpath("/html/body/div[2]/div[1]/div[1]/form/input[1]").send_keys(link)
+		submit = browser.find_element_by_xpath("/html/body/div[2]/div[1]/div[1]/form/input[2]")
+		submit.click()
+		element = WebDriverWait(browser, 50).until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[2]/div[1]/div[1]/div[3]/a[1]")))
+		download = browser.find_element_by_xpath('/html/body/div[2]/div[1]/div[1]/div[3]/a[1]')
+		download.click()
 
-	# waits for all the files to be completed and returns the paths
-	paths = WebDriverWait(browser, 120, 1).until(download_complete_check)
-	print('Download Completed')
-	#except:
-		#print("Download Failed. Trying next song-link please wait until complete")
+		# waits for all the files to be completed and returns the paths
+		paths = WebDriverWait(browser, 120, 1).until(download_complete_check)
+		print('Download Completed')
+	except:
+		print(f"Download Failed for {link} Trying next song-link please wait until complete")
 
 
 def download_complete_check(driver):
@@ -85,5 +87,3 @@ def download_complete_check(driver):
 	if (items.every(e => e.state === "COMPLETE"))
 		return items.map(e => e.fileUrl || e.file_Url);
 	""")
-# Sample Script	
-#download_song('https://youtu.be/-Z0Im1SaWik')
