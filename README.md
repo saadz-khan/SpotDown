@@ -22,27 +22,35 @@ For full list of dependencies check `requirements.txt`.
 ## 1. Cloning
 Clone this repository `git clone https://github.com/saadz-khan/spotify-playlist-downloader`  
 
-## 2. Create Virtual Environment
+## 2. Install chrome webdriver
+- Install webdriver from this [link](https://chromedriver.chromium.org/downloads/)
+- Unzip the file to the cloned directory  
+
+
+![Alt Text](https://media.giphy.com/media/bMTzxmMmF6dyG2CSTL/source.gif?cid=790b7611dbd64a5860c863f445f0e33b05d6a4aaa530cad9&rid=source.gif)
+
+## 3. Create Virtual Environment
 - Change your current working directory by `cd spotify-playlist-downloader`
 - Create virutal environment using `python -m venv env`
 
-## 3. Activate Virtual Environment
+## 4. Activate Virtual Environment
 To activate the virtual  environment run:
 - `env\Scripts\activate.bat` for `Command Prompt` 
                       OR
 - `env\Scripts\activate` in `Windows Powershell`
 
-## 4. Dependency Installation
-3. Install the dependencies using `pip install -r requirements.txt`  
+## 5. Dependency Installation
+Install the dependencies using `pip install -r requirements.txt`  
 
-## 5. Prerequisite
-4. Sign in to the spotify developers dashboard [here](https://developer.spotify.com/dashboard/login) and create, name a project to get the `client_id` and `client_secret`.
-5. Sign in to the google-api developers console [here](https://console.cloud.google.com/apis)
-6. Go to `Credential` on the left side-bar and click `Create Credentials` on top of the page then `API key`.
-7. Edit the `variables.py` file and add the `client_id, client_secret, API key` to `spotify_client_id, spotify_client_secret, youtube_data_api_key` respectively
+## 6. Prerequisite
+- Sign in to the spotify developers dashboard [here](https://developer.spotify.com/dashboard/login) and create, name a project to get the `client_id` and `client_secret`.
+- Sign in to the google-api developers console [here](https://console.cloud.google.com/apis).
+- Go to the `Library` and search `Youtube Data API v3` and click `Enable this API`.
+- Go to `Credential` on the left side-bar and click `Create Credentials` on top of the page then `API key`.
+- Edit the `variables.py` file and add the `client_id, client_secret, API key` to `spotify_client_id, spotify_client_secret, youtube_data_api_key` respectively.
 
-## 6. Downloading Playlist
-8. Replace `https://open.spotify.com/playlist/link_to_playlist` with actual link by sharing the playlist and copying its link and Run:  
+## 7. Downloading Playlist
+Replace `https://open.spotify.com/playlist/link_to_playlist` with actual link by sharing the playlist and copying its link and Run:  
 ```
 python main.py https://open.spotify.com/playlist/link_to_playlist
 
