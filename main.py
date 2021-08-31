@@ -21,3 +21,4 @@ for track in tracks:
 	urls.append(getURL(response))
 
 download_multiple_song(urls)
+print('Surprise! All songs downloaded. Have fun enjoy.')
