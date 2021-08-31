@@ -23,12 +23,12 @@ For full list of dependencies check `requirements.txt`.
 Clone this repository `git clone https://github.com/saadz-khan/spotify-playlist-downloader`  
 
 ## 2. Install chrome webdriver
-- Install webdriver from this [link](https://chromedriver.chromium.org/downloads/)
+- Install webdriver from this [link](https://chromedriver.chromium.org/downloads/)  
 - Unzip the file to the cloned directory  
 
 
-![Alt Text](https://media.giphy.com/media/bMTzxmMmF6dyG2CSTL/source.gif?cid=790b7611dbd64a5860c863f445f0e33b05d6a4aaa530cad9&rid=source.gif)
-  
+![Gif-1](https://media.giphy.com/media/bMTzxmMmF6dyG2CSTL/source.gif?cid=790b7611dbd64a5860c863f445f0e33b05d6a4aaa530cad9&rid=source.gif)
+
   
 ## 3. Create Virtual Environment
 - Change your current working directory by `cd spotify-playlist-downloader`
@@ -48,7 +48,11 @@ Install the dependencies using `pip install -r requirements.txt`
 - Sign in to the spotify developers dashboard [here](https://developer.spotify.com/dashboard/login) and create, name a project to get the `client_id` and `client_secret`.
 - Sign in to the google-api developers console [here](https://console.cloud.google.com/apis).
 - Go to the `Library` and search `Youtube Data API v3` and click `Enable this API`.
-- Go to `Credential` on the left side-bar and click `Create Credentials` on top of the page then `API key`.
+- Go to `Credential` on the left side-bar and click `Create Credentials` on top of the page then `API key`.  
+**Demo for above 3 steps below (API_Key generated below is deleted)**  
+
+![Gif-2](https://media.giphy.com/media/K0oA6mXUDFOjl5iTKH/source.gif?cid=790b7611b01d6ae6d23240007e5eb47e5c8419c25e35bd87&rid=source.gif)  
+
 - Edit the `variables.py` file and add the `client_id, client_secret, API key` to `spotify_client_id, spotify_client_secret, youtube_data_api_key` respectively.
 
 ## 7. Downloading Playlist
