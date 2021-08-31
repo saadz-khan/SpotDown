@@ -81,6 +81,7 @@ Install the dependencies using `pip install -r requirements.txt`
 - Edit the `variables.py` file and add the `client_id, client_secret, API key` to `spotify_client_id, spotify_client_secret, youtube_data_api_key` respectively.
 
 ## Download Playlist
+**Please ensure that there is no directory named SpotDown/SpotDown/downloads after the first run or would give an error. (Will add some workaround later)**  
 Replace `https://open.spotify.com/playlist/link_to_playlist` with actual link by sharing the playlist and copying its link and Run:  
 ```
 python main.py https://open.spotify.com/playlist/link_to_playlist
@@ -99,4 +100,3 @@ This project is [MIT](https://github.com/saadz-khan/SpotDown/blob/master/LICENSE
     
 ## End Note
 > Enjoy! A star would be appreciated. Issues and Pull Requests are open.  
-> Happy developing!
