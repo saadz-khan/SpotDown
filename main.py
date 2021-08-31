@@ -1,5 +1,5 @@
-from playlist_retrieval import spotify_playlist_info
-from youtube_search import youtubeSearch, getURL
+from spotipy_client.client import spotify_playlist_info
+from google_data_client.client import youtubeSearch, getURL
 from downloader import download_multiple_song
 from variables import *
 import sys
