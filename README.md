@@ -24,8 +24,9 @@ Selenium based tool to download spotify playlists automatically using:
     - [Install Chrome Webdriver](#install-chrome-webdriver)
     - [Prerequisite](#prerequisite)
     - [Download Playlist](#download-playlist)
-- [License](#license)
 - [Contribute](#contribute)
+- [License](#license)
+
 
 ## Problem
 ## Dependencies 
@@ -87,10 +88,13 @@ python main.py https://open.spotify.com/playlist/link_to_playlist
 ```  
   
 ## Contribute
+Contributions, issues and feature requests are welcome.
+Feel free to check issues page if you want to contribute.
+Check the [contributing guide](https://github.com/saadz-khan/SpotDown/blob/master/CONTRIBUTING.md).
 
 ## License
-The MIT License (MIT)  
-Copyright (c) 2021 Saad Zafar Khan
+Copyright (c) 2021 [Saad Zafar Khan](https://github.com/saadz-khan)  
+This project is [MIT](https://github.com/saadz-khan/SpotDown/blob/master/LICENSE) licensed.   
 
     
 ## End Note
