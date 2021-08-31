@@ -1,9 +1,8 @@
-from selenium_setup import selenium_setup
+from set_selenium.selenium_setup import selenium_setup
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from os import getcwd
-from time import sleep
 
 # Sample Script	
 #download_song('https://youtu.be/-Z0Im1SaWik')
