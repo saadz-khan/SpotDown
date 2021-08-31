@@ -36,8 +36,8 @@ Clone this repository `git clone https://github.com/saadz-khan/spotify-playlist-
 
 ## 4. Activate Virtual Environment
 To activate the virtual  environment run:
-- `env\Scripts\activate.bat` for `Command Prompt` 
-                      OR
+- `env\Scripts\activate.bat` for `Command Prompt`  
+
 - `env\Scripts\activate` in `Windows Powershell`
 
 ## 5. Dependency Installation
@@ -46,6 +46,7 @@ Install the dependencies using `pip install -r requirements.txt`
 ## 6. Prerequisite
 **This part is a one time setup. Note down your API-keys and keep them to yourself** 
 - Sign in to the spotify developers dashboard [here](https://developer.spotify.com/dashboard/login) and create, name a project to get the `client_id` and `client_secret`.  
+**Demo below (client_keys generated below is deleted)**
 
 ![Gif2](https://media.giphy.com/media/FK5eKB1zFLqy9nHrjL/source.gif?cid=790b76110e1b23f7d2695c3cc54a8b53bd7a00132d32f223&rid=source.gif)  
   
