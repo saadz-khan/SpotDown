@@ -28,7 +28,6 @@ Selenium based tool to download spotify playlists automatically using:
 - [License](#license)
 
 
-## Problem
 ## Dependencies 
 For a full list of dependencies check `requirements.txt`.  
 
