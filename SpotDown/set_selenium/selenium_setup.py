@@ -2,6 +2,21 @@ from fake_useragent.utils import get
 from selenium import webdriver
 from fake_useragent import UserAgent
 import os
+import wget
+import zipfile
+
+def extract_chrome_version(output):
+    try:
+        google_version = ''
+        for letter in output[output.rindex('DisplayVersion    REG_SZ') + 24:]:
+            if letter != '\n':
+                google_version += letter
+            else:
+                break
+        return(google_version.strip())
+    except TypeError:
+        return
+
 
 def selenium_setup():
 	"""
@@ -37,9 +52,30 @@ def selenium_setup():
 	"download.directory_upgrade": True,
 	})
 	
-	driver = webdriver.Chrome(executable_path='./chromedriver.exe' ,options=options)
+	try:	
+		driver = webdriver.Chrome(executable_path='./chromedriver.exe' ,options=options)
+	except:
+		stream = os.popen('reg query "HKLM\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Google Chrome"')
+		output = stream.read()
+		chrome_version = extract_chrome_version(output)
 
-	"""For Firefox webdriver use this snippet "uncomment it out"
+		# build the download url
+		download_url = "https://chromedriver.storage.googleapis.com/" + chrome_version +"/chromedriver_win32.zip"
+
+		# download the zip file using the url built above
+		latest_driver_zip = wget.download(download_url,'./chromedriver.zip')
+
+		# extract the zip file
+		with zipfile.ZipFile(latest_driver_zip, 'r') as zip_ref:
+			zip_ref.extractall() # you can specify the destination folder path here
+		
+		# delete the zip file downloaded above
+		os.remove(latest_driver_zip)
+		driver = webdriver.Chrome(executable_path='./chromedriver.exe' ,options=options)
+
+
+
+	"""For Firefox webdriver use this snippet
 	Firefox profile for the neccessary for download the files
 
 	profile = webdriver.FirefoxProfile()
