@@ -21,7 +21,6 @@ Selenium based tool to download spotify playlists automatically using:
     - [Create Virtual Environment](#create-virtual-environment)
     - [Activate Virtual Environment](#activate-virtual-environment)
     - [Dependency Installation](#dependency-installation)
-    - [Install Chrome Webdriver](#install-chrome-webdriver)
     - [Prerequisite](#prerequisite)
     - [Download Playlist](#download-playlist)
 - [Contribute](#contribute)
@@ -49,16 +48,7 @@ To activate the virtual  environment run:
 
 ## Dependency Installation
 Install the dependencies using `pip install -r requirements.txt`  
-  
-  
-## Install Chrome Webdriver
-- Install webdriver from this [link](https://chromedriver.chromium.org/downloads/)  
-  
-<p align="center">
-  <img src="https://media.giphy.com/media/bMTzxmMmF6dyG2CSTL/source.gif?cid=790b7611dbd64a5860c863f445f0e33b05d6a4aaa530cad9&rid=source.gif" alt="animated-gif1" />
-</p>  
-    
--Unzip the file to the `SpotDown/SpotDown`  
+
 ## Prerequisite
 **This part is a one time setup. Note down your API-keys and keep them to yourself** 
 - Sign in to the spotify developers dashboard [here](https://developer.spotify.com/dashboard/login) and create, name a project to get the `client_id` and `client_secret`.  
